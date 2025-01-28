@@ -52,10 +52,11 @@
         shift_combo: shift_combo {
             compatible = "zmk,behavior-hold-tap";
             label = "SHIFT_COMBO";
-            bindings = <&shift>, <&kp>;
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <190>;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29>;
         };
     };
 
@@ -116,6 +117,11 @@
             bindings = <&kp K_MUTE>;
             key-positions = <29 20>;
         };
+
+        ctrl_alt_del {
+            bindings = <&kp LC(LA(DELETE))>;
+            key-positions = <4 5>;
+        };
     };
 
     keymap {
@@ -141,9 +147,9 @@
 
         left_layer {
             bindings = <
-&kp F1   &kp F2   &kp F3     &kp F4     &kp F5     &kp CARET  &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN    &kp TILDE
-&kp F6   &kp F7   &kp F8     &kp F9     &kp F10    &kp HOME   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END
-&kp F11  &kp F12  &kp LC(C)  &kp LC(V)  &trans     &kp AMPS   &kp UNDER       &kp PLUS        &kp PIPE         &trans
+&kp F1   &kp F2   &kp F3     &kp F4     &kp F5     &kp CARET  &kp PAGE_UP     &kp UP_ARROW      &kp PAGE_DOWN    &kp TILDE
+&kp F6   &kp F7   &kp F8     &kp F9     &kp F10    &kp HOME   &kp LEFT_ARROW  &kp DOWN_ARROW    &kp RIGHT_ARROW  &kp END
+&kp F11  &kp F12  &kp LC(C)  &kp LC(V)  &trans     &kp AMPS   &kp UNDER       &kp SINGLE_QUOTE  &kp PIPE         &trans
                              &trans     &trans     &trans     &trans
             >;
         };
@@ -159,10 +165,10 @@
 
         Colemak {
             bindings = <
-&kp Q            &kp W              &kp F            &kp P         &kp G        &kp J     &kp L             &kp U                    &kp Y         &kp SEMICOLON
-&hml LEFT_GUI A  &hml LEFT_SHIFT R  &hml LEFT_ALT S  &hml RCTRL T  &kp D        &kp H     &hmr RIGHT_GUI N  &hmr LALT E              &hmr RSHFT I  &hmr RCTRL O
-&kp Z            &kp X              &kp C            &kp V         &kp B        &kp K     &kp M             &alt_gr RIGHT_ALT COMMA  &kp DOT       &kp FSLH
-                                                     &lt 2 TAB     &kp SPACE    &kp BSPC  &lt 1 ENTER
+&kp Q            &kp W              &kp F            &kp P         &kp G        &kp J                              &kp L             &kp U                    &kp Y         &kp SEMICOLON
+&hml LEFT_GUI A  &hml LEFT_SHIFT R  &hml LEFT_ALT S  &hml RCTRL T  &kp D        &kp H                              &hmr RIGHT_GUI N  &hmr LALT E              &hmr RSHFT I  &hmr RCTRL O
+&kp Z            &kp X              &kp C            &kp V         &kp B        &kp K                              &kp M             &alt_gr RIGHT_ALT COMMA  &kp DOT       &kp FSLH
+                                                     &lt 2 TAB     &kp SPACE    &shift_combo LEFT_SHIFT BACKSPACE  &lt 1 ENTER
             >;
         };
     };
