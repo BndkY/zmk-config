@@ -125,6 +125,11 @@
             bindings = <&kp LC(LA(DELETE))>;
             key-positions = <4 5>;
         };
+
+        Printscreen {
+            bindings = <&kp PRINTSCREEN>;
+            key-positions = <1 2>;
+        };
     };
 
     keymap {
